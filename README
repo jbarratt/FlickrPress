@@ -11,25 +11,27 @@ For this tool, you may want to install in a custom location.
 
     ./Build install --installbase /home/myuser
 
-would be a reasonable choice.
+would be a reasonable choice. Also, using local::lib is a good option as well.
 
 SUPPORT AND DOCUMENTATION
 
-You need to configure this using yaml
+You need to configure this using yaml, or it will refuse to run.
 
-In ~/.flickrpress.conf
----
-flickr:
-   rss_uri: http://api.flickr.com/services/feeds/photos_public.gne?tags=mytag&lang=en-us&format=rss_200
-   authors:
-      - myuser
-      - anotheruser
-wordpress:
-   xmlrpc_uri: "http://myblog.com/xmlrpc.php"
-   username: "myuser"
-   password: "mypass"
+In ~/.flickrpress.conf:
+    ---
+    flickr:
+    rss_uri: http://api.flickr.com/services/feeds/photos_public.gne?tags=mytag&lang=en-us&format=rss_200
+    authors:
+        - myuser
+        - anotheruser
+    wordpress:
+    xmlrpc_uri: "http://myblog.com/xmlrpc.php"
+    username: "myuser"
+    password: "mypass"
 
-
+Then, run the included 'flickrpress.pl' script. (It will be installed in your bin dir if you use standard arguments to 'make install.')
+It's designed to be run from cron, so by default it's silent.
+It tends to die() on various errors, so if you're running it from cron, you'll get the nice error message when it fails.
 
 
 COPYRIGHT AND LICENCE
