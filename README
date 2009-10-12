@@ -1,0 +1,41 @@
+FlickrPress
+
+To install this module, run the following commands:
+
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
+
+For this tool, you may want to install in a custom location.
+
+    ./Build install --installbase /home/myuser
+
+would be a reasonable choice.
+
+SUPPORT AND DOCUMENTATION
+
+You need to configure this using yaml
+
+In ~/.flickrpress.conf
+---
+flickr:
+   rss_uri: http://api.flickr.com/services/feeds/photos_public.gne?tags=mytag&lang=en-us&format=rss_200
+   authors:
+      - myuser
+      - anotheruser
+wordpress:
+   xmlrpc_uri: "http://myblog.com/xmlrpc.php"
+   username: "myuser"
+   password: "mypass"
+
+
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2009 Joshua Barratt
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
