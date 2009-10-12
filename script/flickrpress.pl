@@ -5,4 +5,4 @@ use strict;
 use FlickrPress;
 
 # no point going OO here.
-FlickPress::run();
+FlickrPress::run();
